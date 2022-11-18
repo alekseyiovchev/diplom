@@ -7,3 +7,6 @@ class Scores(models.Model):
     second_team = models.CharField(max_length=30)
     match_date = models.DateTimeField()
     score = models.CharField(max_length=5)
+
+class Team(models.Model):
+    pass
