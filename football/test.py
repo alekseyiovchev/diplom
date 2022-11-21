@@ -21,5 +21,7 @@ for match in result:
         id=match['id'],
         first_team=match['homeTeam']['shortName'],
         second_team=match['awayTeam']['shortName'],
-        
+        match_date=match['utcDate'],
+        score_first_team=int(match['score']['fullTime']['home']),
+        score_second_team=int(match['score']['fullTime']['away'])
         )
