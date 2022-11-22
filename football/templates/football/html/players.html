@@ -1,6 +1,8 @@
 {% extends 'football/html/base.html' %}
 {% load static %}
 
+{% block menu_players_class %} active {% endblock %}
+
 {% block content %}
 
 <body>  
@@ -186,7 +188,7 @@
 </footer>
 
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="{% static '/dist/js/bootstrap.bundle.min.js' %}"></script> -->
 
   
 {% endblock %}

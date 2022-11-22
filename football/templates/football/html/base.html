@@ -97,7 +97,7 @@
       <div class="position-sticky pt-3 sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
+            <a class="nav-link {% block menu_home_class %}{% endblock %}" aria-current="page" href="{% url 'home' %}">
               <span data-feather="home" class="align-text-bottom"></span>
               Головна
             </a>
@@ -115,7 +115,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'players' %}">
+            <a class="nav-link {% block menu_players_class %}{% endblock %}" href="{% url 'players' %}">
               <span data-feather="users" class="align-text-bottom"></span>
               Гравці
             </a>
