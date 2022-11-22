@@ -21,4 +21,5 @@ from football.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name = 'home'),
+    path('players/', players, name = 'players')
 ]
