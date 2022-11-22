@@ -1,4 +1,5 @@
 import sys
+sys.path.append("c:\py\diploma\diplomWindows\diplom\project")
 sys.path.append("/Users/alekseyiovchev/Python/diplomaMac/diplom/project/")
 
 import os
@@ -9,7 +10,7 @@ django.setup()
 
 
 import requests
-from .models import Scores
+from football.models import Scores
 
 
 games_url = 'http://api.football-data.org/v4/matches/?dateFrom=2022-11-11&dateTo=2022-11-21'
