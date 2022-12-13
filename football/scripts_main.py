@@ -1,4 +1,5 @@
 import scores_main
+import players_main
 import requests
 
 from football.models import Scores,Players
@@ -14,11 +15,12 @@ id = 44
 player_url = f'https://{host}/persons/{id}/matches?status=FINISHED'
 
 
-def get_info(url):
+def get_info(url,data=None):
     request = requests.get(url,headers=api)
-    result = request.json()['matches']
+    result = request.json()[data]
     return result
     
 
 if __name__ == "__main__":
-    scores_main.run_scores(get_info(games_url))
+    # scores_main.run_scores(get_info(games_url,data='matches'))
+    players_main.create_player(get_info(player_url,data='person'))
