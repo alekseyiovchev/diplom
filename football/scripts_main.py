@@ -11,7 +11,7 @@ api = {'X-Auth-Token':'b5611168bafe4dd2a3fcc7b6b7e19e9a'}
 games_url = f'http://{host}/matches/?dateFrom=2022-11-05&dateTo=2022-11-12'
 
 # Players
-id = 44
+id = 2019
 player_url = f'https://{host}/persons/{id}/matches?status=FINISHED'
 
 
