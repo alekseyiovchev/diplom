@@ -24,3 +24,4 @@ def get_info(url,data=None):
 if __name__ == "__main__":
     # scores_main.run_scores(get_info(games_url,data='matches'))
     players_main.create_player(get_info(player_url,data='person'))
+    players_main.player_matches(get_info(player_url,data='matches'),id)

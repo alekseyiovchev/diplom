@@ -10,25 +10,26 @@ django.setup()
 
 
 import requests
-from football.models import Players
+from football.models import Players,Player_matches
 
 def create_player(result):
     if not Players.objects.filter(id=result['id']):
         Players.objects.create(id=result['id'],name=result['name'],date_of_birth=result['dateOfBirth'],nationality=result['nationality'])
         print(result['id'],result['name'],result['dateOfBirth'],result['nationality'])
 
-def run_players(result):
+def player_matches(result,id):
     for data in result:
-        print(Players.objects.filter(id=data['id']))
+        print(Player_matches.objects.filter(id=data['id']))
         
-        if not Players.objects.filter(id=data['id']):
-            Players.objects.create(
-                id=data['id'],
+        if not Player_matches.objects.filter(id=data['id']):
+            Player_matches.objects.create(
+                player= Players(id=id),
+                match_id=data['id'],
                 first_team=data['homeTeam']['shortName'],
                 first_team_icon = data['homeTeam']['crest'],
                 second_team=data['awayTeam']['shortName'],
                 second_team_icon = data['awayTeam']['crest'],
-                data_date=data['utcDate'],
+                match_date=data['utcDate'],
                 score_first_team=int(data['score']['fullTime']['home']),
                 score_second_team=int(data['score']['fullTime']['away'])
                 )
