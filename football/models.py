@@ -18,6 +18,7 @@ class Players(models.Model):
     date_of_birth = models.DateTimeField()
     nationality = models.CharField(max_length=30)
     current_team = models.CharField(max_length=30)
+    match_id = models.IntegerField()
     first_team = models.CharField(max_length=30)
     first_team_icon = models.URLField(max_length = 200,default='null')
     second_team = models.CharField(max_length=30)
