@@ -18,6 +18,7 @@ def create_player(result):
         print(result['id'],result['name'],result['dateOfBirth'],result['nationality'])
 
 def player_matches(result,id):
+    print(result)
     for data in result:
         print(Player_matches.objects.filter(id=data['id']))
         
