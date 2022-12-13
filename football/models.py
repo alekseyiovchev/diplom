@@ -14,7 +14,7 @@ class Scores(models.Model):
 class Players(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=30)
-    bio = models.TextField()
+    bio = models.TextField(null=True)
     date_of_birth = models.DateTimeField()
     nationality = models.CharField(max_length=30)
     current_team = models.CharField(max_length=30)
