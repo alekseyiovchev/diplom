@@ -7,4 +7,4 @@ request = requests.get(games_url,headers={'X-Auth-Token':'b5611168bafe4dd2a3fcc7
 result = request.json()['matches']
 for i in result:
     Scores.objects.create()
-    print(i['person']['id'],i['person']['name'],i['homeTeam']['shortName'],'|',i['awayTeam']['shortName'],i['score']['fullTime']['home'],'-',i['score']['fullTime']['away'])
+    print(i['person']['id'],i['person']['name'],i['person']['dateOfBirth'],i['person']['nationality'],i['score']['fullTime']['home'],'-',i['score']['fullTime']['away'])
