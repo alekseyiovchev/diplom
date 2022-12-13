@@ -13,10 +13,9 @@ import requests
 from football.models import Players
 
 def create_player(result):
-    print(result)
     if not Players.objects.filter(id=result['id']):
         Players.objects.create(id=result['id'],name=result['name'],date_of_birth=result['dateOfBirth'],nationality=result['nationality'])
-        print(id=result['id'],name=result['name'],date_of_birth=result['dateOfBirth'],nationality=result['nationality'])
+        print(result['id'],result['name'],result['dateOfBirth'],result['nationality'])
 
 def run_players(result):
     for data in result:
