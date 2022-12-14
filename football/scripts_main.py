@@ -8,7 +8,9 @@ host = 'api.football-data.org/v4'
 api = {'X-Auth-Token':'b5611168bafe4dd2a3fcc7b6b7e19e9a'}
 
 # Scores
-games_url = f'http://{host}/matches/?dateFrom=2022-12-01&dateTo=2022-12-11'
+dateFrom = '2022-12-01'
+dateTo = '2022-12-11'
+games_url = f'http://{host}/matches/?dateFrom={dateFrom}&dateTo={dateTo}'
 
 # Players
 id = 3218
