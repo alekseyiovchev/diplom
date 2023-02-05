@@ -33,7 +33,9 @@
               <p class="card-text">{{player.bio | truncatewords:17 }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Перегляд</button>
+                    <a href="{{ player.get_absolute_url }}">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Перегляд</button>
+                    </a>
                 </div>
                 <small class="text-muted">Народився: {{ player.date_of_birth | date:"D d M Y" }}</small>
               </div>

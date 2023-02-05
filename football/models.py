@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Scores(models.Model):
@@ -18,6 +19,10 @@ class Players(models.Model):
     date_of_birth = models.DateTimeField()
     nationality = models.CharField(max_length=30)
     current_team = models.CharField(max_length=30,null=True)
+    photo = models.ImageField(upload_to='photos/players/',default='url')
+
+    def get_absolute_url(self):
+        return reverse('players_post', kwargs={'players_id':self.id})
     
 class Player_matches(models.Model):
     player = models.ForeignKey(Players, on_delete=models.CASCADE)    
@@ -28,4 +33,4 @@ class Player_matches(models.Model):
     second_team_icon = models.URLField(max_length = 200,default='null')
     match_date = models.DateTimeField()
     score_first_team = models.IntegerField(default=0)
-    score_second_team = models.IntegerField(default=0)
+    score_second_team = models.IntegerField(default=0) 
