@@ -12,6 +12,14 @@ class Scores(models.Model):
     score_first_team = models.IntegerField(default=0)
     score_second_team = models.IntegerField(default=0)
 
+    def __str__(self):
+        return "{} - {}".format(self.first_team,self.second_team)
+    
+    class Meta:
+        verbose_name = 'Матч'
+        verbose_name_plural = 'Все матчи'
+        ordering = ['-match_date']
+
 class Players(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=30)
@@ -23,7 +31,15 @@ class Players(models.Model):
 
     def get_absolute_url(self):
         return reverse('players_post', kwargs={'players_id':self.id})
-    
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Игрок'
+        verbose_name_plural = 'Игроки'
+        ordering = ['name']
+
 class Player_matches(models.Model):
     player = models.ForeignKey(Players, on_delete=models.CASCADE)    
     match_id = models.IntegerField()
@@ -34,3 +50,11 @@ class Player_matches(models.Model):
     match_date = models.DateTimeField()
     score_first_team = models.IntegerField(default=0)
     score_second_team = models.IntegerField(default=0) 
+
+    def __str__(self):
+        return "{} - {}".format(self.first_team,self.second_team)
+
+    class Meta:
+        verbose_name = 'Матч игрока'
+        verbose_name_plural = 'Матчи игроков'
+        ordering = ['player']
