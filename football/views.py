@@ -10,7 +10,10 @@ def players(request):
     return render(request, 'football/html/players.html',{ 'data' : Players.objects.all()})
 
 def show_player(request,players_id):
-    return HttpResponse(players_id)
-    # post = get_object_or_404(Players, pk=players_id)
+    post = get_object_or_404(Players, pk=players_id)
 
-    # return render(request,'football/html/players_post.html',context=post.name )
+    context = {
+        'post':post
+        }
+
+    return render(request,'football/html/players_post.html',context=context)

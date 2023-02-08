@@ -1,6 +1,17 @@
 {% extends 'football/html/base.html' %}
 {% load static %}
 
+
 {% block content %}
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
 <h1>{{ post.name }}</h1>
 
+<p>
+    <font size="3"><strong>Зараз грає за: {{ post.current_team }}</strong></font>
+</p>
+
+<p><img src="{{ post.photo.url }}" ALIGN="right" alt="Cristiano Ronaldo" ></p>
+
+<font size="4">{{ post.bio|linebreaks }}</font>
+{% endblock %}
