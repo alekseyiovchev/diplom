@@ -20,7 +20,6 @@ def create_player(result):
 def player_matches(result,id):
     print(result)
     for data in result:
-        print(Player_matches.objects.filter(id=data['id']))
         
         if not Player_matches.objects.filter(id=data['id']):
             Player_matches.objects.create(

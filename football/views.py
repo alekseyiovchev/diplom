@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404,HttpResponse
-from football.models import Scores, Players
+from football.models import Scores, Players, Player_matches
 
 # Create your views here.  
 
@@ -11,9 +11,11 @@ def players(request):
 
 def show_player(request,players_id):
     post = get_object_or_404(Players, pk=players_id)
+    matches = Player_matches.objects.filter(player=players_id).order_by('-match_date')
 
     context = {
-        'post':post
+        'post':post,
+        'matches':matches
         }
 
     return render(request,'football/html/players_post.html',context=context)
