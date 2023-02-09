@@ -137,19 +137,19 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="/players/44">
+            <a class="nav-link {% if active == '44' %} active {% endif %}" href="/players/44">
               <span data-feather="file-text" class="align-text-bottom"></span>
               Cristiano Ronaldo
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if menu_players == active %} {% block menu_players %}{% endblock %} {% else %}  {% endif %}" href="/players/3218">
+            <a class="nav-link {% if active == '3218' %} active {% endif %}" href="/players/3218">
               <span data-feather="file-text" class="align-text-bottom"></span>
               Lionel Messi
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/players/8491">
+            <a class="nav-link {% if active == '8491' %} active {% endif %}" href="/players/8491">
               <span data-feather="file-text" class="align-text-bottom"></span>
               Neymar Jr.
             </a>
