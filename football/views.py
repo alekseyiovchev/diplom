@@ -15,7 +15,8 @@ def show_player(request,players_id):
 
     context = {
         'post':post,
-        'matches':matches
+        'matches':matches,
+        'active':str(post.pk)
         }
 
     return render(request,'football/html/players_post.html',context=context)
