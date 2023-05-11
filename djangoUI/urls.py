@@ -25,7 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name = 'home'),
     path('players/', players, name = 'players'), 
-    path('players/<int:players_id>/', show_player, name='players_post')
+    path('players/<int:players_id>/', show_player, name='players_post'),
+    path('champions_league_2023/', champions_league_2023, name = 'champions_league_2023'), 
 ]
 
 if settings.DEBUG:
