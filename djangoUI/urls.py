@@ -24,7 +24,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name = 'home'),
-    path('players/', players, name = 'players'), 
+    path('players/', players, name = 'players'),
+    path('teams/', teams, name = 'teams'),
+    path('teams/manchester_city', manchester_city, name = 'manchester_city'), 
+    path('teams/real_madrid', real_madrid, name = 'real_madrid'), 
     path('players/<int:players_id>/', show_player, name='players_post'),
     path('champions_league_2023/', champions_league_2023, name = 'champions_league_2023'), 
 ]

@@ -18,10 +18,9 @@ def create_player(result):
         print(result['id'],result['name'],result['dateOfBirth'],result['nationality'])
 
 def player_matches(result,id):
-    print(result)
     for data in result:
         
-        if not Player_matches.objects.filter(id=data['id']):
+        if not Player_matches.objects.filter(match_id=data['id']):
             Player_matches.objects.create(
                 player= Players(id=id),
                 match_id=data['id'],
@@ -34,15 +33,15 @@ def player_matches(result,id):
                 score_second_team=int(data['score']['fullTime']['away'])
                 )
             
-            print(
-            data['id'],
-            data['utcDate'],
-            data['homeTeam']['shortName'],
-            data['homeTeam']['crest'],
-            '|',
-            data['awayTeam']['shortName'],
-            data['awayTeam']['crest'],
-            data['score']['fullTime']['home'],
-            '-',
-            data['score']['fullTime']['away']
-            )
+            # print(
+            # data['id'],
+            # data['utcDate'],
+            # data['homeTeam']['shortName'],
+            # data['homeTeam']['crest'],
+            # '|',
+            # data['awayTeam']['shortName'],
+            # data['awayTeam']['crest'],
+            # data['score']['fullTime']['home'],
+            # '-',
+            # data['score']['fullTime']['away']
+            # )

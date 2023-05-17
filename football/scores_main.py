@@ -28,15 +28,15 @@ def run_scores(result):
                 score_second_team=int(match['score']['fullTime']['away'])
                 )
             
-            print(
-            match['id'],
-            match['utcDate'],
-            match['homeTeam']['shortName'],
-            match['homeTeam']['crest'],
-            '|',
-            match['awayTeam']['shortName'],
-            match['awayTeam']['crest'],
-            match['score']['fullTime']['home'],
-            '-',
-            match['score']['fullTime']['away']
-            )
+            # print(
+            # match['id'],
+            # match['utcDate'],
+            # match['homeTeam']['shortName'],
+            # match['homeTeam']['crest'],
+            # '|',
+            # match['awayTeam']['shortName'],
+            # match['awayTeam']['crest'],
+            # match['score']['fullTime']['home'],
+            # '-',
+            # match['score']['fullTime']['away']
+            # )

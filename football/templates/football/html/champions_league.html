@@ -5,6 +5,7 @@
 
 {% block content %}    
 <!-- Custom styles for this template -->
+<title>Ліга Чемпіонів - Oleksii Iovchev</title>
 <link href="{% static 'css/carousel.css' %}" rel="stylesheet">
 
 
@@ -108,7 +109,7 @@
           </tr>
         </thead>
         <tbody>
-          {% for match in matches %}
+          {% for match in data %}
           <tr>
             <td>{{match.id}}</td>
             <td>{{match.match_date}}</td>
