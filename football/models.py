@@ -28,6 +28,7 @@ class Players(models.Model):
     nationality = models.CharField(max_length=30)
     current_team = models.CharField(max_length=30,null=True)
     photo = models.ImageField(upload_to='photos/players/',default='url')
+    second_photo=models.ImageField(upload_to='photos/players/',default='url')
 
     def get_absolute_url(self):
         return reverse('players_post', kwargs={'players_id':self.id})
