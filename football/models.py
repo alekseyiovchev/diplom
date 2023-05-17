@@ -58,3 +58,21 @@ class Player_matches(models.Model):
         verbose_name = 'Матч игрока'
         verbose_name_plural = 'Матчи игроков'
         ordering = ['player']
+
+class Champions_League_Scores(models.Model):
+    id = models.IntegerField(primary_key=True)
+    first_team = models.CharField(max_length=30)
+    first_team_icon = models.URLField(max_length = 200,default='null')
+    second_team = models.CharField(max_length=30)
+    second_team_icon = models.URLField(max_length = 200,default='null')
+    match_date = models.DateTimeField()
+    score_first_team = models.IntegerField(default=0)
+    score_second_team = models.IntegerField(default=0)
+
+    def __str__(self):
+        return "{} - {}".format(self.first_team,self.second_team)
+    
+    class Meta:
+        verbose_name = 'Матч ЛЧ'
+        verbose_name_plural = 'Все матчи ЛЧ'
+        ordering = ['-match_date']

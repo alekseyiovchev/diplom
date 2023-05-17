@@ -10,7 +10,7 @@ def players(request):
     return render(request, 'football/html/players.html',{ 'data' : Players.objects.all()})
 
 def champions_league_2023(request):
-    return render(request, 'football/html/champions_league.html',{ 'data' : Players.objects.all()})
+    return render(request, 'football/html/champions_league.html',{ 'data' : Scores.objects.all().order_by('-match_date')})
 
 def show_player(request,players_id):
     post = get_object_or_404(Players, pk=players_id)
