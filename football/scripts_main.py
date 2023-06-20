@@ -13,7 +13,8 @@ api = {'X-Auth-Token':'b5611168bafe4dd2a3fcc7b6b7e19e9a'}
 dateFrom = (datetime.now() - timedelta(days=10)).strftime("%Y-%m-%d")
 dateTo = datetime.now().strftime("%Y-%m-%d")
 games_url = f'http://{host}/matches/?dateFrom={dateFrom}&dateTo={dateTo}'
-chempions_league_url = f'https://{host}/matches?competitions=2001&status=FINISHED&dateFrom={dateFrom}&dateTo={dateTo}'
+# chempions_league_url = f'https://{host}/matches?competitions=2001&status=FINISHED&dateFrom=2023-06-05&dateTo=2023-06-15'
+print(games_url)
 
 def get_info(url,data=None):
     request = requests.get(url,headers=api)
@@ -26,7 +27,7 @@ if __name__ == "__main__":
 
     try:
         scores_main.run_scores(get_info(games_url,data='matches'))
-        champions_league_script.run_Champions_League_Scores(get_info(chempions_league_url,data='matches'))
+        # champions_league_script.run_Champions_League_Scores(get_info(chempions_league_url,data='matches'))
 
     except KeyError:
         pass
