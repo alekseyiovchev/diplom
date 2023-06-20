@@ -14,7 +14,6 @@ dateFrom = (datetime.now() - timedelta(days=10)).strftime("%Y-%m-%d")
 dateTo = datetime.now().strftime("%Y-%m-%d")
 games_url = f'http://{host}/matches/?dateFrom={dateFrom}&dateTo={dateTo}'
 # chempions_league_url = f'https://{host}/matches?competitions=2001&status=FINISHED&dateFrom=2023-06-05&dateTo=2023-06-15'
-print(games_url)
 
 def get_info(url,data=None):
     request = requests.get(url,headers=api)
