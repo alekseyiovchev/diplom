@@ -1,6 +1,7 @@
 # Диплом / Diploma Project
 UPD: Mark - 5+ (A+ "Best graduation project")
-### Сайт со статистикой последних футбольных матчей на фреймворке Django с использованием API / A site with statistics of the latest football matches on the Django framework using API
+### Сайт со статистикой последних футбольных матчей на фреймворке Django с использованием API 
+### A site with statistics of the latest football matches on the Django framework using API
 
 ![image](https://user-images.githubusercontent.com/93688655/227967882-ee6879f5-cb31-4695-a8e8-eb6338db95f1.png)
 
